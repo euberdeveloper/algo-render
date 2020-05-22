@@ -16,7 +16,6 @@ const PORT = process.env.PORT || 8000;
 
 app.use(compression());
 if (process.env.NODE_ENV === 'production') {
-    logger.debug('httpsRedirect');
     app.use(httpsRedirect);
 }
 app.use(helmet());
