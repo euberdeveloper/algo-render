@@ -29,7 +29,7 @@ export default class MainView extends Vue {
   /* GETTERS */
 
   get host(): string {
-    return `http://localhost:8000`;
+    return `https://algo-render.herokuapp.com/`;
   }
 
   /* LIFECYCLE */
