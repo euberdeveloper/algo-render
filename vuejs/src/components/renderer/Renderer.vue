@@ -4,7 +4,12 @@
     <template v-if="input">
 
       <template v-for="(row, i) of input">
-        <span :class="['cell', cell]" v-for="(cell, j) of row" :key="`${i}-${j}`"></span> 
+        <span 
+          :class="['cell', cell]" 
+          :style="cellsStyle[i][j]"
+          v-for="(cell, j) of row" 
+          :key="`${i}-${j}`"
+          @click="toggleCell(i, j)" /> 
       </template>
 
     </template>
@@ -13,7 +18,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Prop, Watch, Vue } from 'vue-property-decorator';
 
 enum Cell {
   EMPTY = 'empty',
@@ -28,6 +33,7 @@ export default class Renderer extends Vue {
   /* DATA */
 
   private internalSelectedFile = '';
+  private selectedCells: { i: number; j: number }[] = [];
 
   /* PROPS */
 
@@ -90,6 +96,34 @@ export default class Renderer extends Vue {
     };
   }
 
+  get cellsStyle(): any[][] | null {
+    const style = {
+      background: '#5a5fff'
+    };
+
+    return this.input ? this.input.map((row, i) => 
+      row.map((_, j) => this.selectedCells.find(el => el.i == i && el.j == j) ? style : '')
+    ) : null;
+  }
+
+  /* METHODS */
+
+  toggleCell(i: number, j: number): void {
+    const index = this.selectedCells.findIndex(el => el.i == i && el.j == j);
+    if (index === -1) {
+      this.selectedCells.push({ i, j });
+    }
+    else {
+      this.selectedCells.splice(index, 1);
+    }
+  }
+
+  /* WATCHERS */
+  @Watch('rawInput')
+  watchRawInput() {
+    this.selectedCells = [];
+  }
+
 }
 </script>
 
@@ -108,7 +142,7 @@ $size: 80vh;
     border: 1px solid #0436fc;
   }
   .cell.empty {
-    background: #6d89ff;
+    background: #9a9dff;
   }
   .cell.black {
     background: black;
