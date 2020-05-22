@@ -1,0 +1,19 @@
+{
+  "name": "algo-render",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eugenio Berretta <euberdeveloper@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dree": "^2.4.14",
+    "express": "^4.17.1",
+    "helmet": "^3.22.0",
+    "morgan": "^1.10.0"
+  }
+}
