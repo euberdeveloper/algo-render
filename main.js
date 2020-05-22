@@ -7,12 +7,18 @@ const bodyParser = require('body-parser');
 const dree = require('dree');
 const fs = require('fs');
 const path = require('path');
+const httpsRedirect = require('./utils/httpsRedirect');
 
 const app = express();
 
 const INPUTS_DIR = path.join(__dirname, 'inputs');
+const PORT = process.env.PORT || 8000;
 
 app.use(compression());
+if (process.env.NODE_ENV === 'production') {
+    logger.debug('httpsRedirect');
+    app.use(httpsRedirect);
+}
 app.use(helmet());
 app.use(cors());
 app.use(morgan('dev'));
@@ -34,4 +40,4 @@ app.get('/input', (req, res) => {
     res.send(result);
 });
 
-app.listen(8000, () => console.log('Listening on port 8000'));
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
