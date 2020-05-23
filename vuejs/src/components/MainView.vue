@@ -1,7 +1,7 @@
 <template>
   <div class="main-view">
     <file-selector class="selector" :selectedFile.sync="selectedFile" :options="options" />
-    <solution-inserter class="inserter" :value.sync="proposedSolution" @renderSolution="onRenderedSolution" v-if="selectedFile" />{{proposedSolution}}
+    <solution-inserter class="inserter" :value.sync="proposedSolution" @renderSolution="onRenderedSolution" v-if="selectedFile" />
     <renderer class="renderer" :rawInput="input" :rawSolution="renderedSolution" />
   </div>
 </template>
