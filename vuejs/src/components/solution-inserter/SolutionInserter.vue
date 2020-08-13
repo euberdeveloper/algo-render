@@ -1,7 +1,7 @@
 <template>
   <div class="solution-inserter">
-     <input class="input" type="search" placeholder="INSERISCI SOLUZIONE/OUTPUT" v-model="internalValue" @input="$emit('update:value', $event.target.value)" />
-     <button class="button" @click="$emit('renderSolution')">MOSTRA</button>
+     <vs-input class="input" type="search" placeholder="INSERISCI SOLUZIONE/OUTPUT" v-model="internalValue" @input="$emit('update:value', internalValue)" />
+     <vs-button class="button" border @click="$emit('renderSolution')">MOSTRA</vs-button>
   </div>
 </template>
 
@@ -37,13 +37,21 @@ $margintop: 36px;
   text-align: center;
 
   .input {
+    display: inline-block; 
+
     width: 400px;
     padding: 4px 7px;
   }
 
+  .input::v-deep .vs-input {
+      width: 100%;
+  }
+
   .button {
+    display: inline-block;
+
     margin-left: 12px;
-    padding: 8px;
+    padding: 5px;
   }
 }
 </style>

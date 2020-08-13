@@ -82,9 +82,8 @@ export default class Renderer extends Vue {
 
     if (this.rawSolution) {
       const words = this.rawSolution.split(/\s+/).slice(2);
-
       const [x, y] = words.slice(0, 2).map(value => +value);
-
+      
       const moves = words[2].split("").slice(0, words[2].length - 1).map(move => {
         switch (move) {
           case "U":
