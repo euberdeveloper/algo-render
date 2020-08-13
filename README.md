@@ -7,7 +7,7 @@ __link to the site:__ [https://algo-render.herokuapp.com](https://algo-render.he
 
 The second project of "Algoritmi and Strutture Dati - UNITN" consisted in a teams challenge. An alghorithmic problem was proposed and the solutions were to be submitted to a server as a c++ program. The server would have tested the program on different inputs and give points in base of the correctness and efficiency of the solution.
 
-[https://github.com/euberdeveloper/algo-render/raw/master/documentation/assignment.pdf](This) is the link of the assignment (in Italian).
+[This](https://github.com/euberdeveloper/algo-render/raw/master/documentation/assignment.pdf) is the link of the assignment (in Italian).
 
 ## Project purpose:
 
