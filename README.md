@@ -13,11 +13,11 @@ The second project of "Algoritmi and Strutture Dati - UNITN" consisted in a team
 
 We were given twenty sample inputs in order to try our solutions before submiting. But, being the inputs only numbers in a text file, it would have been useful to see them rendered in a grid. Doing that manually was too time-consuming.
 
-This project consists in a server that serves the frontend and the sample input files and in a frontend that makes you select the solution and visualize it in your browser (Desktop only).
+This project consists in a server that serves the frontend and the sample input files and in a frontend that makes you select the solution and visualize it in your browser (**Desktop only**).
 
 ## How to use it:
 
-* Go to [https://algo-render.herokuapp.com](https://algo-render.herokuapp.com)
+* Go to [https://algo-render.herokuapp.com](https://algo-render.herokuapp.com) on a **desktop browser**.
 * A select will appear. Select an input sample.
 * You will se the rendered input sample.
 * If you want to try a solution (an example could be "x x 1 1 DDDRRU", the rules are in the assignment.pdf), you can write it in the text input and click the button MOSTRA (trd. SHOW)
